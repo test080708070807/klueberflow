@@ -1,159 +1,117 @@
 .animate-fade-in {
-  animation: fadeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .page-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
 }
 
 .page-title {
-  font-size: 2rem;
-  margin-bottom: 6px;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
 }
-
 .page-subtitle {
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  font-weight: 600;
 }
 
 .date-filter {
-  padding: 12px 24px;
-  font-size: 0.95rem;
-  font-weight: 800;
-  border-radius: 99px; /* 완전 둥글게 */
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-secondary);
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-  margin-bottom: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .stat-card {
-  position: relative;
-  overflow: hidden;
-  padding: 30px;
+  padding: 16px;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
 
 .stat-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  margin-bottom: 12px;
 }
 
-/* 부드러운 파스텔 컬러로 변경 */
-.bg-blue { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #4f46e5; }
-.bg-warning { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #ea580c; }
-.bg-danger { background: linear-gradient(135deg, #ffe4e6, #fecdd3); color: #e11d48; }
-.bg-success { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #16a34a; }
+.bg-blue { background-color: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+.bg-warning { background-color: #fff7ed; color: #ea580c; border: 1px solid #fed7aa;}
+.bg-danger { background-color: #fef2f2; color: #dc2626; border: 1px solid #fecaca;}
+.bg-success { background-color: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0;}
 
-.stat-info {
-  margin-bottom: 16px;
-}
-
+.stat-info { margin-bottom: 4px; }
 .stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
-
-.stat-value {
-  font-size: 2.2rem;
-  font-weight: 800;
-}
+.stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
 
 .stat-trend {
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-size: 0.75rem;
+  margin-top: 4px;
   display: inline-block;
-  padding: 6px 12px;
-  border-radius: 99px;
+  font-weight: 600;
 }
-
-.stat-trend.positive { color: #15803d; background-color: #dcfce7; }
-.stat-trend.negative { color: #be123c; background-color: #ffe4e6; }
-.stat-trend.neutral { color: #475569; background-color: #f1f5f9; }
+.stat-trend.positive { color: #16a34a; }
+.stat-trend.negative { color: #dc2626; }
+.stat-trend.neutral { color: #64748b; }
 
 .charts-section {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 24px;
-}
-
-.chart-header {
-  margin-bottom: 24px;
-}
-
-.chart-header h3 {
-  font-size: 1.25rem;
-}
-
-.chart-wrapper {
-  height: 320px;
-}
-
-.activity-list {
-  display: flex;
-  flex-direction: column;
   gap: 16px;
 }
+
+.chart-header { 
+  margin-bottom: 12px; 
+  border-bottom: 1px solid var(--border-color); 
+  padding-bottom: 8px;
+}
+.chart-header h3 { font-size: 1rem; color: var(--text-primary); }
+
+.chart-wrapper { height: 260px; }
+
+.activity-list { display: flex; flex-direction: column; gap: 8px; }
 
 .activity-item {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 20px;
-  background-color: var(--bg-tertiary); /* 부드러운 배경 */
-  border-radius: 24px;
-  border: 1px solid white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-  transition: transform 0.2s;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-tertiary);
 }
-
-.activity-item:hover {
-  transform: scale(1.02);
-}
-
-.activity-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  margin-top: 4px;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 4px white; /* 귀여운 테두리 효과 */
-}
-
-.activity-content p {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-}
-
-.activity-content span {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-weight: 600;
-}
+.activity-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; }
+.activity-content p { font-size: 0.85rem; font-weight: 600; margin-bottom: 2px;}
+.activity-content span { font-size: 0.75rem; color: var(--text-secondary); }
 
 @media (max-width: 1024px) {
-  .charts-section {
-    grid-template-columns: 1fr;
-  }
+  .charts-section { grid-template-columns: 1fr; }
 }
