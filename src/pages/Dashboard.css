@@ -1,9 +1,9 @@
 .animate-fade-in {
-  animation: fadeIn 0.4s ease-out;
+  animation: fadeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -11,81 +11,84 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .page-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 4px;
+  font-size: 2rem;
+  margin-bottom: 6px;
 }
 
 .page-subtitle {
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .date-filter {
-  padding: 8px 16px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  border-radius: 99px; /* 완전 둥글게 */
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .stat-card {
   position: relative;
   overflow: hidden;
+  padding: 30px;
 }
 
 .stat-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
-  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 
-.bg-blue { background: linear-gradient(135deg, #60a5fa, #3b82f6); }
-.bg-warning { background: linear-gradient(135deg, #fbbf24, #d97706); }
-.bg-danger { background: linear-gradient(135deg, #f87171, #ef4444); }
-.bg-success { background: linear-gradient(135deg, #34d399, #10b981); }
+/* 부드러운 파스텔 컬러로 변경 */
+.bg-blue { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #4f46e5; }
+.bg-warning { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #ea580c; }
+.bg-danger { background: linear-gradient(135deg, #ffe4e6, #fecdd3); color: #e11d48; }
+.bg-success { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #16a34a; }
 
 .stat-info {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .stat-label {
   color: var(--text-secondary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
 .stat-value {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 800;
 }
 
 .stat-trend {
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 800;
   display: inline-block;
-  padding: 4px 8px;
-  border-radius: 12px;
+  padding: 6px 12px;
+  border-radius: 99px;
 }
 
-.stat-trend.positive { color: #10b981; background-color: rgba(16, 185, 129, 0.1); }
-.stat-trend.negative { color: #ef4444; background-color: rgba(239, 68, 68, 0.1); }
-.stat-trend.neutral { color: #94a3b8; background-color: rgba(148, 163, 184, 0.1); }
+.stat-trend.positive { color: #15803d; background-color: #dcfce7; }
+.stat-trend.negative { color: #be123c; background-color: #ffe4e6; }
+.stat-trend.neutral { color: #475569; background-color: #f1f5f9; }
 
 .charts-section {
   display: grid;
@@ -94,15 +97,15 @@
 }
 
 .chart-header {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .chart-header h3 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
 }
 
 .chart-wrapper {
-  height: 300px;
+  height: 320px;
 }
 
 .activity-list {
@@ -113,36 +116,40 @@
 
 .activity-item {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   align-items: flex-start;
-  padding: 12px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  border-left: 3px solid transparent;
+  padding: 20px;
+  background-color: var(--bg-tertiary); /* 부드러운 배경 */
+  border-radius: 24px;
+  border: 1px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  transition: transform 0.2s;
 }
 
-.activity-item:has(.bg-danger) { border-left-color: var(--danger); }
-.activity-item:has(.bg-warning) { border-left-color: var(--warning); }
-.activity-item:has(.bg-success) { border-left-color: var(--success); }
+.activity-item:hover {
+  transform: scale(1.02);
+}
 
 .activity-dot {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  margin-top: 5px;
+  margin-top: 4px;
   flex-shrink: 0;
+  box-shadow: 0 0 0 4px white; /* 귀여운 테두리 효과 */
 }
 
 .activity-content p {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .activity-content span {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {
