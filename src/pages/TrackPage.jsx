@@ -16,10 +16,10 @@ const TrackPage = () => {
 
   const getStatusBadge = (status) => {
     switch(status) {
-      case 'In Transit': return <span className="badge badge-info">In Transit</span>;
-      case 'Delayed': return <span className="badge badge-error">Delayed</span>;
-      case 'Preparing': return <span className="badge badge-warning">Preparing</span>;
-      case 'Completed': return <span className="badge badge-success">Completed</span>;
+      case 'In Transit': return <span className="badge badge-info">운송중</span>;
+      case 'Delayed': return <span className="badge badge-error">지연발생</span>;
+      case 'Preparing': return <span className="badge badge-warning">출고대기</span>;
+      case 'Completed': return <span className="badge badge-success">도착완료</span>;
       default: return <span className="badge">{status}</span>;
     }
   };
@@ -28,11 +28,11 @@ const TrackPage = () => {
     <div className="track-page animate-fade-in">
       <div className="page-header">
         <div>
-          <h1 className="page-title">Shipment <span className="text-gradient">Tracking</span></h1>
+          <h1 className="page-title">화물 <span className="text-gradient">Tracking</span></h1>
           <p className="page-subtitle">구글 스프레드시트 연동: 배송 상태 상세 조회 (View Only)</p>
         </div>
         <button className="export-btn">
-          <Download size={16} /> Export
+          <Download size={16} /> 엑셀 다운로드
         </button>
       </div>
 
@@ -43,18 +43,18 @@ const TrackPage = () => {
             <input type="text" placeholder="품목명, 고객사 검색..." />
           </div>
           <button className="filter-btn">
-            <Filter size={18} /> Filters
+            <Filter size={18} /> 조건 필터
           </button>
         </div>
 
         {loading ? (
-          <div className="loading-state">Loading logistics data...</div>
+          <div className="loading-state">데이터를 불러오는 중입니다...</div>
         ) : (
           <div className="table-wrapper">
             <table className="tracking-table">
               <thead>
                 <tr>
-                  <th>Status</th>
+                  <th>상태</th>
                   <th>품목명</th>
                   <th>포장단위 / 주문수량</th>
                   <th>운송수단</th>
@@ -72,7 +72,7 @@ const TrackPage = () => {
                     <td>
                       <div className="td-stacked">
                         <span>{row.packUnit}</span>
-                        <span className="text-muted">Qty: {row.orderQty}</span>
+                        <span className="text-muted">수량: {row.orderQty}</span>
                       </div>
                     </td>
                     <td>{row.transportMethod}</td>
@@ -84,8 +84,8 @@ const TrackPage = () => {
                     </td>
                     <td>
                       <div className="td-stacked">
-                        <span>Exp: {row.estDispatch}</span>
-                        <span className={row.actualDispatch ? "text-success" : "text-muted"}>Act: {row.actualDispatch || 'Pending'}</span>
+                        <span>예상: {row.estDispatch}</span>
+                        <span className={row.actualDispatch ? "text-success" : "text-muted"}>출고: {row.actualDispatch || '대기중'}</span>
                       </div>
                     </td>
                     <td>

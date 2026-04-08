@@ -9,7 +9,7 @@ const Header = () => {
       <div className="header-left">
         <Link to="/" className="logo">
           <img src="/logo.png" alt="Logo" className="logo-img" />
-          <h1>Klueberflow SCM</h1>
+          <h1>Klueberflow</h1>
         </Link>
         <nav className="gnb-nav">
           <NavLink to="/" className={({isActive}) => isActive ? "nav-item active" : "nav-item"}>대시보드</NavLink>

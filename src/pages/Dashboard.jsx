@@ -34,11 +34,11 @@ const DashboardPage = () => {
     <div className="dashboard animate-fade-in">
       <div className="page-header">
         <div>
-          <h1 className="page-title">Logistics <span className="text-gradient">Overview</span></h1>
-          <p className="page-subtitle">Real-time tracking and logistics KPIs</p>
+          <h1 className="page-title">물류 종합 <span className="text-gradient">현황</span></h1>
+          <p className="page-subtitle">실시간 화물 내역 및 주요 물류 지표</p>
         </div>
         <div className="date-filter glass-card">
-          <span>April 2026</span>
+          <span>2026년 4월</span>
         </div>
       </div>
 
@@ -46,44 +46,44 @@ const DashboardPage = () => {
         <div className="stat-card glass-card">
           <div className="stat-icon bg-blue"><Package size={24} /></div>
           <div className="stat-info">
-            <p className="stat-label">Active Shipments</p>
+            <p className="stat-label">진행중인 화물</p>
             <h3 className="stat-value">{stats.totalActive}</h3>
           </div>
-          <div className="stat-trend positive">+12.5% this month</div>
+          <div className="stat-trend positive">전월 대비 +12.5%</div>
         </div>
         
         <div className="stat-card glass-card">
           <div className="stat-icon bg-warning"><Clock size={24} /></div>
           <div className="stat-info">
-            <p className="stat-label">Pending / Preparing</p>
+            <p className="stat-label">출고 대기</p>
             <h3 className="stat-value">{stats.pending}</h3>
           </div>
-          <div className="stat-trend neutral">Steady workflow</div>
+          <div className="stat-trend neutral">정상 흐름</div>
         </div>
         
         <div className="stat-card glass-card">
           <div className="stat-icon bg-danger"><AlertTriangle size={24} /></div>
           <div className="stat-info">
-            <p className="stat-label">Delayed Deliveries</p>
+            <p className="stat-label">지연된 화물</p>
             <h3 className="stat-value">{stats.delayed}</h3>
           </div>
-          <div className="stat-trend negative">Requires attention</div>
+          <div className="stat-trend negative">확인 필요</div>
         </div>
         
         <div className="stat-card glass-card">
           <div className="stat-icon bg-success"><TrendingUp size={24} /></div>
           <div className="stat-info">
-            <p className="stat-label">Completed Delivery</p>
+            <p className="stat-label">도착 완료</p>
             <h3 className="stat-value">{stats.completed}</h3>
           </div>
-          <div className="stat-trend positive">+5.2% accuracy</div>
+          <div className="stat-trend positive">리드타임 정확도 +5.2%</div>
         </div>
       </div>
 
       <div className="charts-section">
         <div className="chart-container glass-card">
           <div className="chart-header">
-            <h3>Shipping Volume Trend</h3>
+            <h3>상반기 물동량 추이</h3>
           </div>
           <div className="chart-wrapper">
             <ResponsiveContainer width="100%" height="100%">
@@ -106,28 +106,28 @@ const DashboardPage = () => {
         
         <div className="recent-activity glass-card">
           <div className="chart-header">
-            <h3>Action Needed</h3>
+            <h3>요주의 항목</h3>
           </div>
           <div className="activity-list">
             <div className="activity-item">
               <div className="activity-dot bg-danger"></div>
               <div className="activity-content">
                 <p>TRK-20260401-02 (게이밍 기계식 키보드)</p>
-                <span>ETA Delayed due to Sea port congestion.</span>
+                <span>항만 혼잡으로 인해 입항(ETA) 지연 발생.</span>
               </div>
             </div>
             <div className="activity-item">
               <div className="activity-dot bg-warning"></div>
               <div className="activity-content">
-                <p>TRK-20260403-02 requires actual dispatch confirmation.</p>
-                <span>Pending since yesterday.</span>
+                <p>TRK-20260403-02 실제 출고 여부 확인 필요.</p>
+                <span>전일부터 시스템 상 미출고 대기 중.</span>
               </div>
             </div>
             <div className="activity-item">
               <div className="activity-dot bg-success"></div>
               <div className="activity-content">
-                <p>TRK-20260328-01 Delivered successfully.</p>
-                <span>Client: 사운드맥스</span>
+                <p>TRK-20260328-01 최종 입고 확인.</p>
+                <span>고객사: 사운드맥스</span>
               </div>
             </div>
           </div>
